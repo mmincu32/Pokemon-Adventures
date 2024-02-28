@@ -1,0 +1,120 @@
+Design Patterns:
+1. Singleton pentru Arena, fabrica v
+2. Fabrica de pokemoni v
+3. Comanda de la antrenor pentru pokemon -
+4. Observator pentru item-uri (Adică dacă avem obiectul “scut” și un antrenor cu oricâți pokemoni, toți pokemonii pot purta
+                               scutul.) x
+5. Decorator pentru pokemoni
+
+Decorator:
+-pokemon obișnuit cu nume și HP
+-pokemon decorator
+-decorator de abilități
+-decorator de atacuri
+-decorator de obiecte
+
+
+Pokemon abstract
+
+BuildablePokemon concret
+PokemonBuilder build() intoarce un BuildablePokemon
+
+
+
+(h1 = 20, h2 = 25, d1 = 0, d2 = 0, d1n = 0, d2n = 0)
+
+p1 pierde d1, ajunge la 20-0=20, ataca, cauzand d2n=8
+p2 pierde d2, ajunge la 25-0=25, ataca, cauzand d1n=4
+if (p1): d1=d1n, p1 pierde d1, ajunge la 20-4=16, ataca, cauzand d2n=1
+
+
+
+TypingControl ----> BattleManagement : damagecatrepoekmon1si2, viatapokemonului1si2
+
+
+Charmander: Bagheta_magica, Pelerina : p = createPokemon(Charmander), p.addItem(Bagheta_magica)
+
+
+
+prepareCoaches(File f):
+name = br.readline();
+age = br.readline();
+a = new Antrenor(name, age);
+de 3 ori:
+    addPokemontoCoach(a, line);
+
+
+clasa principala de test:
+-new Arena()
+-for every file in Aventuri {
+-runAventura(file f)
+-curataArena()
+}
+
+runAventura(File f) :
+-prepareCoaches(f)
+-for i 1 3 battle(pokemon, pokemon)
+-get bestpokemons
+-battle(bestpokemon, bestpokemon)
+
+battle(pokemon1, pokemon2):
+-do {
+    i = random 0 2;
+    event(pokemon1, pokemon2, i)
+} while i not 2
+event(pokemon1, pokemon2, i):
+switch(i):
+case 0: neutrel1(pokemon1)
+case 1: neutrel2(pokemon2)
+case 2: versus(pokemon1, pokemon2)
+
+neutrel1(pokemon1):
+    d1 = 3 - pokemon1.defense;
+    while (pokemoni in viata) {
+        pokemon1 efectueaza comanda
+        neutrel1 ataca daca nu are stun
+        daca pokemon1 are dodge nu ia damage
+        neutrel1 ia damage
+    }
+
+logger:
+se creeaza un fisier .txt pentru fiecare 2 antrenori, gen Ash si Tybur --> Ash_vs_Tybur.txt
+arena retine antrenorii
+
+
+p1: Snorlax -
+
+
+AsaltP1: executa atac daca nu e in stun
+intoarce ArrayList
+dmgTo2 = [0], 2willBeStuned = [1], 1Dodges = [2], Type = [3], Cooldown = [4]
+
+Pikachu HP 35, Snorlax HP 62
+
+ex. P1 cu Pikachu abilitate 1, P2 cu Snorlax abilitate 2
+atac1: 6,0,0,1,4
+dmgto2 = 6, 2willbestunned = false, 1dodges = false, ability1p1waiter = 4
+atac2: 0,0,1,2,5
+dmgto1 = 0, 1willbestunned = false, 2dodges = true, ability2p2waiter = 5
+
+calculateDamage:
+Pikachu a ramas cu 35 HP.
+Snorlax a dat dodge, asa ca ramane cu 62 HP.
+
+manageCooldown:
+Pikachu are abilitatea 1 in cooldown 4.   (4-1=3)
+2 nu
+Snorlax 1 nu
+Snorlax are abilitatea 2 in cooldown 5.  (5-1=4)
+
+setstuns:
+p1stun = false,
+
+snorlax abilitate, cooldown 6
+6-1=5 cooldown 5, atac
+5-1=4 cooldown 4, atac
+4-1=3 cooldown 3, atac
+3-1=2 cooldown 2, atac
+2-1=1, cooldown 1, atac
+1-1=0, no cooldown, ...
+

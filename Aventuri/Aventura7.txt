@@ -1,0 +1,11 @@
+Pyro
+80
+Meowth: Vitamine, Bagheta magica
+Pikachu: Vitamine
+Squirtle: Bagheta magica
+
+Icy-Gigi
+86
+Meowth: Scut
+Jigglypuff: Pelerina, Scut
+Vulpix:

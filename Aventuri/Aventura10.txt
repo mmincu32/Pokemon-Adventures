@@ -1,0 +1,11 @@
+Ash
+10
+Pikachu: Vitamine, Bagheta Magica, Pelerina
+Bulbasaur:
+Charmander: Scut, Vesta
+
+Brock
+14
+Charmander:
+Meowth: Sabiuta, Vitamine, Vesta
+Snorlax: Sabiuta, Vitamine, Pelerina
